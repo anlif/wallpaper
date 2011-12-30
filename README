@@ -1,0 +1,26 @@
+wallpaper - command-line tool to set wallpaper using feh, written in haskell by alf
+
+usage:
+wallpaper [command] [args]
+
+commands:
+favorite [args]	
+	Tag a wallpaper as favorite
+	no args adds current wallpaper to favorites
+	used with -r 'num' as args adds the 'num' most recent wallpaper to favorites
+
+list [args]
+	List wallpapers, numbering corresponds to set/clear commands (read below)
+	--all/-a 	lists all available wallpapers
+	--recent/-r	lists recent wallpapers
+	--favorite/-f	lists favorite wallpapers
+
+set [args]
+	Set a wallpaper
+	no args sets a random wallpaper (equivalent to `wallpaper set --random`)
+	--favorite/-f 'num' 	set favorite number 'num' (see list)
+	--recent/-r 'num' 	set recent number 'num'
+
+clear [args]
+	--favorite/-f	clear favorites
+	--recent/-r	clear recent
