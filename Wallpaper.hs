@@ -76,7 +76,18 @@ set :: Args -> IO ()
 set _ = putStrLn "set Not implemented!"
 
 clear :: Args -> IO ()
-
+clear ["-f"] = clear ["--favorite"]
+clear ["--favorite"] = do
+                        content <- getContent
+                        let newContent = sortedContent . unlines $ filter (not . isPrefixOf favPrefix) $ lines content
+                        setContent newContent
+clear ["-r"] = clear ["--recent"]
+clear ["--recent"] = do
+                        content <- getContent
+                        let newContent = sortedContent . unlines $ filter (not . isPrefixOf recentPrefix) $ lines content
+                        setContent newContent
+clear ["-a"] = clear ["--all"] 
+clear ["--all"] = do clear ["-r"]; clear ["-f"]
 clear _ = error argumentError
 
 printUsage :: Args -> IO ()
@@ -99,7 +110,8 @@ setContent :: String -> IO ()
 setContent content = bracketOnError (openTempFile "." "wallpaperTemp")
                                     (\(path, handle) -> do
                                         hClose handle
-                                        removeFile path)
+                                        removeFile path
+                                        putStrLn "Error setting content!")
                                     (\(path, handle) -> do
                                         hPutStr handle content
                                         hClose handle
