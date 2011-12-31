@@ -65,9 +65,9 @@ list _ = error argumentError
 
 add :: Args -> IO ()
 add ["-d", path] = add ["--dir", path]
-add ["--dir", path] | validPath (read path :: String) = do 
+add ["--dir", path] | validPath path = do 
                                     content <- getContent
-                                    let newDir = dirPrefix ++ " " ++ (read path :: String)
+                                    let newDir = dirPrefix ++ " " ++ path
                                         newContent = sortedContent $ content ++ newDir
                                     setContent newContent
 add ["-f"] = add ["--favorite"]
