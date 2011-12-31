@@ -7,6 +7,7 @@ import Control.Exception.Base (bracketOnError)
 import System.Process
 import System.Random
 
+-- these are temporary
 wpDir = "/home/andrfla/Pictures/InterfaceliftTest"
 filePath = "FileFormat"
 
@@ -37,6 +38,7 @@ execute _           = error argumentError
 -- Implementations
 list :: Args -> IO ()
 list ["-a"] = list ["--all"]
+-- TODO: Implement this properly
 list ["--all"] = do
                         entries <- getDirectoryContents wpDir
                         let wallpapers = unlines $ filter (not . (isPrefixOf ".")) entries
