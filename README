@@ -4,23 +4,26 @@ usage:
 wallpaper [command] [args]
 
 commands:
-favorite [args]	
-	Tag a wallpaper as favorite
-	no args adds current wallpaper to favorites
-	used with -r 'num' as args adds the 'num' most recent wallpaper to favorites
+add [args]
+	Add a favorite or a directory
+	--favorite/-f 'num' 	- add a favorite, 'num' corresponds to the recent list
+	--dir/-d 'path'	- add a directory, 'path' is the absolute path to the directory that should be added
 
 list [args]
 	List wallpapers, numbering corresponds to set/clear commands (read below)
 	--all/-a 	lists all available wallpapers
 	--recent/-r	lists recent wallpapers
 	--favorite/-f	lists favorite wallpapers
+	--dir/-d	list directories currently added
 
 set [args]
 	Set a wallpaper
-	no args sets a random wallpaper (equivalent to `wallpaper set --random`)
-	--favorite/-f 'num' 	set favorite number 'num' (see list)
+	no args - equivalent to `wallpaper set --random`
+	--random		set a random wallpaper from a directory supplied
+	--favorite/-f 'num' 	set favorite number 'num' (see list), if num is ommited, it choses a random wallpaper from favorites
 	--recent/-r 'num' 	set recent number 'num'
 
 clear [args]
-	--favorite/-f	clear favorites
-	--recent/-r	clear recent
+	--favorite/-f 'num'	- clear favorite number 'num', without 'num' it clears all of them
+	--recent/-r		- clears all recent
+	--dir/-d 'num'		..
