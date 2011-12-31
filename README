@@ -1,4 +1,4 @@
-wallpaper - command-line tool to set wallpaper using feh, written in haskell by alf
+wallpaper - command-line tool to set wallpaper using feh
 
 usage:
 wallpaper [command] [args]
@@ -6,11 +6,11 @@ wallpaper [command] [args]
 commands:
 add [args]
 	Add a favorite or a directory
-	--favorite/-f 'num' 	- add a favorite, 'num' corresponds to the recent list
+	--favorite/-f 'index' 	- add a favorite, 'index' corresponds to the recent list
 	--dir/-d 'path'	- add a directory, 'path' is the absolute path to the directory that should be added
 
 list [args]
-	List wallpapers, numbering corresponds to set/clear commands (read below)
+	List wallpapers, indexbering corresponds to set/clear commands (read below)
 	--all/-a 	lists all available wallpapers
 	--recent/-r	lists recent wallpapers
 	--favorite/-f	lists favorite wallpapers
@@ -20,10 +20,10 @@ set [args]
 	Set a wallpaper
 	no args - equivalent to `wallpaper set --random`
 	--random		set a random wallpaper from a directory supplied
-	--favorite/-f 'num' 	set favorite number 'num' (see list), if num is ommited, it choses a random wallpaper from favorites
-	--recent/-r 'num' 	set recent number 'num'
+	--favorite/-f 'index' 	set favorite number 'index' (see list), if index is ommited, it choses a random wallpaper from favorites
+	--recent/-r 'index' 	set recent number 'index'
 
 clear [args]
-	--favorite/-f 'num'	- clear favorite number 'num', without 'num' it clears all of them
+	--favorite/-f 'index'	- clear favorite number 'index', without 'index' it clears all of them
 	--recent/-r		- clears all recent
-	--dir/-d 'num'		..
+	--dir/-d 'index'	..
