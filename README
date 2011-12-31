@@ -7,21 +7,21 @@ commands:
 add [args]
 	Add a favorite or a directory
 	--favorite/-f 'index' 	- add a favorite, 'index' corresponds to the recent list
-	--dir/-d 'path'	- add a directory, 'path' is the absolute path to the directory that should be added
+	--dir/-d 'path'		- add a directory, 'path' is the absolute path to the directory that should be added
 
 list [args]
 	List wallpapers, indexbering corresponds to set/clear commands (read below)
-	--all/-a 	lists all available wallpapers
-	--recent/-r	lists recent wallpapers
-	--favorite/-f	lists favorite wallpapers
-	--dir/-d	list directories currently added
+	--all/-a 		- lists all available wallpapers
+	--recent/-r		- lists recent wallpapers
+	--favorite/-f		- lists favorite wallpapers
+	--dir/-d		- list directories currently added
 
 set [args]
 	Set a wallpaper
 	no args - equivalent to `wallpaper set --random`
-	--random		set a random wallpaper from a directory supplied
-	--favorite/-f 'index' 	set favorite number 'index' (see list), if index is ommited, it choses a random wallpaper from favorites
-	--recent/-r 'index' 	set recent number 'index'
+	--random		- set a random wallpaper from a directory supplied
+	--favorite/-f 'index' 	- set favorite number 'index' (see list), if index is ommited, it choses a random wallpaper from favorites
+	--recent/-r 'index' 	- set recent number 'index'
 
 clear [args]
 	--favorite/-f 'index'	- clear favorite number 'index', without 'index' it clears all of them
